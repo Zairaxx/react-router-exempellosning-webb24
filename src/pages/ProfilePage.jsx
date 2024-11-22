@@ -1,10 +1,12 @@
-import { useLocation } from "react-router-dom"
+import { useLocation, useParams } from "react-router-dom"
 
 function ProfilePage() {
 
     //Hämtar state som skickats via Link
     const location = useLocation();
-    console.log(location.state);
+    const params = useParams();
+
+    console.log(params)
 
     return(<div>
         <h2>Profile</h2>

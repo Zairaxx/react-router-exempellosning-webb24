@@ -71,7 +71,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage users={users}/>}/>
       <Route path="/newUser" element={<NewUserPage addUser={addUser}/>} />   
-      <Route path="/profile" element={<ProfilePage/>} />
+      <Route path="/profile/:id/" element={<ProfilePage/>} />
     </Routes>
     </>
   )

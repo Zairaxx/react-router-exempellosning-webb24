@@ -6,7 +6,7 @@ function HomePage(props) {
         <h2>Home</h2>
         <ul>
             {props.users.map(
-                (user,i) =><li key={i}><Link to="/profile" state={user}>{user.userName}</Link></li>)}
+                (user,i) =><li key={i}><Link to={"/profile/" + (i+1)} state={user}>{user.userName}</Link></li>)}
         </ul>
     </>)
 }
