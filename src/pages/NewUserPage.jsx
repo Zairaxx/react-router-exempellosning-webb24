@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate,Link } from "react-router-dom"
 
 function NewUserPage({addUser}){
 
@@ -7,6 +8,8 @@ function NewUserPage({addUser}){
     let [age, setAge] = useState("")
     let [country, setCountry] = useState("")
     let [city, setCity] = useState("")
+
+    let navigate = useNavigate();
 
     return(<>
         <h2>New user</h2>
@@ -20,7 +23,9 @@ function NewUserPage({addUser}){
         <br/>
         <input type="text" placeholder="City" onChange={e => setCity(e.target.value)}/>
         <br/>
-        <button onClick={() => addUser({
+        {/* <Link to="/"> */}
+        <button onClick={() => {
+        addUser({
             userName,
             name,
             age,
@@ -28,7 +33,11 @@ function NewUserPage({addUser}){
                 country,
                 city
             }
-        })}>Add user</button>
+        })
+        navigate("/")
+        
+    }}>Add user</button>
+        {/* </Link> */}
 
     </>)
 }

@@ -5,6 +5,7 @@ import './App.css'
 import {Routes, Route, Link} from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import NewUserPage from './pages/NewUserPage'
+import ProfilePage from './pages/ProfilePage'
 function App() {
 
   const [users, setUsers] = useState([
@@ -70,6 +71,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage users={users}/>}/>
       <Route path="/newUser" element={<NewUserPage addUser={addUser}/>} />   
+      <Route path="/profile" element={<ProfilePage/>} />
     </Routes>
     </>
   )
